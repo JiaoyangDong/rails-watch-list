@@ -268,9 +268,8 @@ Try to put the "New bookmark form" on the list page itself, not on a separate pa
 Let's add a JavaScript package to our Rails app! You can have a look at the lecture and try to apply `select2` to your movies dropdown.
 
 Using importmap to install `select2`:
-
 ```bash
-importmap pin select2
+importmap pin tom-select
 ```
 
 To do so:
