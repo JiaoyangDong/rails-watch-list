@@ -1,0 +1,16 @@
+<h1>Lists#show</h1>
+
+<h1><%= @list.name %></h1>
+
+<%= link_to "add new movie to the list", new_list_bookmark_path(@list) %>
+
+<% @bookmarks.each do |bookmark| %>
+  <% movie = bookmark.movie %>
+  <div class="card">
+    <%= movie.title %>
+    <%# <i class="fa-solid fa-trash"></i> %>
+    <%= link_to icon('fa-solid','trash'),
+      bookmark_path(bookmark) ,
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
+<% end %>
