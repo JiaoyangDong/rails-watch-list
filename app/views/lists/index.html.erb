@@ -1,9 +1,17 @@
+<%# Banner %>
 <%= render "layouts/banner", header: "Checkout the movie lists" %>
 
-<div class="container">
+<%# Lists %>
+<div class="container grid grid-cols-3">
   <% @lists.each do |list| %>
-    <div class="card">
-        <%= list.name %>
-    </div>
+    <%= link_to list_path(list) do %>
+      <div class="card p-14 m-2 rounded-md">
+          <%= list.name %>
+      </div>
+    <% end %>
   <% end %>
+  <%# <div class="card p-6 m-2 rounded-md bg-transparent"> %>
+    <%= link_to '+ Add new list', new_list_path,
+    class: "card p-14 m-2 rounded-md bg-transparent" %>
+  <%# </div> %>
 </div>

@@ -1,14 +1,35 @@
-<h1><%= @list.name %></h1>
+<%# Banner %>
+<%= render "layouts/banner", header: @list.name %>
 
-<%= link_to "add new movie to the list", new_list_bookmark_path(@list) %>
+<div class="container justify-center">
 
-<% @bookmarks.each do |bookmark| %>
-  <% movie = bookmark.movie %>
-  <div class="card">
-    <%= movie.title %>
-    <%# <i class="fa-solid fa-trash"></i> %>
-    <%= link_to icon('fa-solid','trash'),
-      bookmark_path(bookmark) ,
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<%# Add movie button %>
+<%= link_to "add new movie to the list", new_list_bookmark_path(@list),
+  class: "btn btn-secondary p-3 my-2 rounded-md" %>
+
+
+
+  <%# Movie list %>
+<div class="container grid grid-cols-3 gap-4">
+
+  <% @bookmarks.each do |bookmark| %>
+    <% movie = bookmark.movie %>
+    <div class="card movie-card flex flex-row rounded-md p-2 relative">
+      <div class="info">
+        <h2><%= movie.title %> <span class="text-gray-400"><%= movie.rating %></span></h2>
+        <div class="sticky h-200">
+          <p><%= movie.overview %></p>
+        </div>
+        <%# DELETE BUTTON %>
+          <%# <i class="fa-solid fa-trash"></i> %>
+        <%= link_to icon('fa-solid','trash'),
+            bookmark_path(bookmark) ,
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+            class: "btn w-10" %>
+      </div>
+      <img class="movie-img" src=<%= movie.poster_url%> />
+
+    </div>
+  <% end %>
   </div>
-<% end %>
+</div>
