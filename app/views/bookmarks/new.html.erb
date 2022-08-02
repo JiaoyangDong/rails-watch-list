@@ -2,7 +2,7 @@
 <p>Find me in app/views/bookmarks/new.html.erb</p>
 <h1><%= @list.name %></h1>
 <%= simple_form_for([@list, @bookmark]) do |f| %>
-	<%= f.association :movie, as: :radio_buttons%>
+	<%= f.association :movie %>
   <%= f.input :comment %>
   <%= f.submit %>
 <% end %>
