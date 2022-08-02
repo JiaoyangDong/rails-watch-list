@@ -73,3 +73,5 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails" # Uncomment this line
 gem 'open-uri'
 gem 'json'
+
+gem "dotenv-rails", groups: [:development, :test]
