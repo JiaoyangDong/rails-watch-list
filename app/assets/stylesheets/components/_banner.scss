@@ -1,9 +1,9 @@
 .banner {
-  background-color: lightcoral;
-  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-  //   url("https://bplusmovieblog.files.wordpress.com/2012/07/metropolis-13.png?w=1178&h=736");
+  // background-color: lightcoral;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url("https://bplusmovieblog.files.wordpress.com/2012/07/metropolis-13.png?w=1178&h=736");
   // asset-url("metropolis-2.webp");
-  background-size: cover; /* :auto;(intrinsc size), :100%;*/
+  background-size: cover;
   height: 350px;
   margin: 0;
   padding: 130px 40px;
@@ -13,6 +13,6 @@
     font-size: 50px;
     font-family: $headers-font;
     text-align: center;
-    justify-self: center; /*x axis*/
+    justify-self: center;
   }
 }
